@@ -10,6 +10,7 @@
 		47C262011B41AA5B008B84D8 /* GKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C262001B41AA5B008B84D8 /* GKTableViewController.m */; };
 		47C262091B41C10D008B84D8 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47C262081B41C10D008B84D8 /* Launch Screen.xib */; };
 		47C2620B1B41C591008B84D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C2620A1B41C591008B84D8 /* Main.storyboard */; };
+		47C2620C1B41C998008B84D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		51EF2951A4CAB0A501006FCD /* Pods_GKFadeNavigationController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53A467903807F32CD62B556 /* Pods_GKFadeNavigationController_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -17,7 +18,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* GKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* GKAppDelegate.m */; };
-		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -280,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47C262091B41C10D008B84D8 /* Launch Screen.xib in Resources */,
-				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				47C2620C1B41C998008B84D8 /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				47C2620B1B41C591008B84D8 /* Main.storyboard in Resources */,
 			);

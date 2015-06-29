@@ -8,9 +8,9 @@
         <!--Title-->
         <scene sceneID="B75-U6-JWT">
             <objects>
-                <tableViewController id="75B-X8-YcM" customClass="GKTableViewController" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="75B-X8-YcM" customClass="GKTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="dyv-mG-1qx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -18,13 +18,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeworld" translatesAutoresizingMaskIntoConstraints="NO" id="wbj-o7-0pH">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second" translatesAutoresizingMaskIntoConstraints="NO" id="wbj-o7-0pH">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                     <animations/>
                                 </imageView>
                             </subviews>
                             <animations/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="wbj-o7-0pH" firstAttribute="leading" secondItem="YFd-7k-Vcq" secondAttribute="leading" id="mw9-iE-x5X"/>
                                 <constraint firstAttribute="bottom" secondItem="wbj-o7-0pH" secondAttribute="bottom" id="q7x-zt-qn7"/>
@@ -49,6 +49,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="75B-X8-YcM" kind="show" id="UYd-nu-NEe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,8 +59,12 @@
                             <outlet property="delegate" destination="75B-X8-YcM" id="AeL-vj-p4H"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Title" id="NGL-Dz-Z70"/>
+                    <connections>
+                        <outlet property="headerView" destination="YFd-7k-Vcq" id="Oh5-RW-Zau"/>
+                        <outlet property="imageBottomConstraint" destination="q7x-zt-qn7" id="54J-6S-7OU"/>
+                        <outlet property="imageTopConstraint" destination="z8s-bH-Ofc" id="opO-Bm-uud"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRM-XI-DFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +91,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="homeworld" width="990" height="561"/>
+        <image name="second" width="1816" height="936"/>
     </resources>
-    <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+    <inferredMetricsTieBreakers>
+        <segue reference="paJ-ro-ywr"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
