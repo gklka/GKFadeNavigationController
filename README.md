@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
 [![Platform](https://img.shields.io/cocoapods/p/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
 
+<video src="example.mov">
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
