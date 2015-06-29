@@ -48,7 +48,7 @@ pod "GKFadeNavigationController"
 
 ## Author
 
-Gruber Kristóf, gk@lka.hu
+Gruber Kristóf, gk@lka.hu, @gklka
 
 ## License
 
