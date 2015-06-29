@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
 [![Platform](https://img.shields.io/cocoapods/p/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
 
-<video src="example.mov">
+[![Demo](example.gif?raw=true)](example.mov?raw=true)
 
 ## Usage
 
