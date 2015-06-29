@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
                        * Demo project with elastic header image
                        DESC
   s.homepage         = "https://github.com/gklka/GKFadeNavigationController"
-  s.screenshots      = "https://github.com/gklka/GKFadeNavigationController/blob/master/example.mov?raw=true"
+  s.screenshots      = "https://github.com/gklka/GKFadeNavigationController/blob/master/example.gif?raw=true"
   s.license          = 'WTFPL'
   s.author           = { "Gruber Kristóf" => "gk@lka.hu" }
   s.source           = { :git => "https://github.com/gklka/GKFadeNavigationController.git", :tag => s.version.to_s }
