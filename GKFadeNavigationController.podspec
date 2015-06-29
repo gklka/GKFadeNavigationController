@@ -10,14 +10,14 @@
 Pod::Spec.new do |s|
   s.name             = "GKFadeNavigationController"
   s.version          = "0.1.0"
-  s.summary          = "A short description of GKFadeNavigationController."
+  s.summary          = "A Navigation Controller which supports animated hiding of the Navigation Bar"
   s.description      = <<-DESC
                        An optional longer description of GKFadeNavigationController
 
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/GKFadeNavigationController"
+  s.homepage         = "https://github.com/gklka/GKFadeNavigationController"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Gruber Kristóf" => "gk@lka.hu" }

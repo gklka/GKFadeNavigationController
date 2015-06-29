@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47C262011B41AA5B008B84D8 /* GKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C262001B41AA5B008B84D8 /* GKTableViewController.m */; };
+		47C262091B41C10D008B84D8 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47C262081B41C10D008B84D8 /* Launch Screen.xib */; };
+		47C2620B1B41C591008B84D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C2620A1B41C591008B84D8 /* Main.storyboard */; };
 		51EF2951A4CAB0A501006FCD /* Pods_GKFadeNavigationController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53A467903807F32CD62B556 /* Pods_GKFadeNavigationController_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -14,7 +17,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* GKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* GKAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* GKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* GKViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -22,7 +24,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		6E48372355206BE88726FA3D /* Pods_GKFadeNavigationController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36260F34C3A161BB2D2F6663 /* Pods_GKFadeNavigationController_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,12 @@
 		36260F34C3A161BB2D2F6663 /* Pods_GKFadeNavigationController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKFadeNavigationController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF267DD92D45A8A3BB56E70 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4136A9BF8E78CCB43CD0D1EA /* Pods-GKFadeNavigationController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKFadeNavigationController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GKFadeNavigationController_Example/Pods-GKFadeNavigationController_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		47C261FF1B41AA5B008B84D8 /* GKTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKTableViewController.h; sourceTree = "<group>"; };
+		47C262001B41AA5B008B84D8 /* GKTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKTableViewController.m; sourceTree = "<group>"; };
+		47C262081B41C10D008B84D8 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		47C2620A1B41C591008B84D8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5472F87EFBE6CD8D1138C9DA /* GKFadeNavigationController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GKFadeNavigationController.podspec; path = ../GKFadeNavigationController.podspec; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* GKFadeNavigationController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GKFadeNavigationController.app; path = GKFadeNavigationController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* GKFadeNavigationController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKFadeNavigationController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -51,17 +56,14 @@
 		6003F59B195388D20070C39A /* GKFadeNavigationController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GKFadeNavigationController-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* GKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* GKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* GKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* GKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = GKFadeNavigationController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* GKFadeNavigationController_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKFadeNavigationController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		65AE7AA0252898BD36CBD734 /* Pods-GKFadeNavigationController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKFadeNavigationController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKFadeNavigationController_Tests/Pods-GKFadeNavigationController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8C852EE14F55BFAFCC935AA6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		97583FEA76A240F459BF378A /* Pods-GKFadeNavigationController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKFadeNavigationController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKFadeNavigationController_Example/Pods-GKFadeNavigationController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D53A467903807F32CD62B556 /* Pods_GKFadeNavigationController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKFadeNavigationController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,8 +110,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* GKFadeNavigationController.app */,
-				6003F5AE195388D20070C39A /* Tests.xctest */,
+				6003F58A195388D20070C39A /* GKFadeNavigationController_Example.app */,
+				6003F5AE195388D20070C39A /* GKFadeNavigationController_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,10 +134,11 @@
 			children = (
 				6003F59C195388D20070C39A /* GKAppDelegate.h */,
 				6003F59D195388D20070C39A /* GKAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* GKViewController.h */,
-				6003F5A6195388D20070C39A /* GKViewController.m */,
+				47C262081B41C10D008B84D8 /* Launch Screen.xib */,
+				47C2620A1B41C591008B84D8 /* Main.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				47C261FF1B41AA5B008B84D8 /* GKTableViewController.h */,
+				47C262001B41AA5B008B84D8 /* GKTableViewController.m */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for GKFadeNavigationController";
@@ -213,7 +216,7 @@
 			);
 			name = GKFadeNavigationController_Example;
 			productName = GKFadeNavigationController;
-			productReference = 6003F58A195388D20070C39A /* GKFadeNavigationController.app */;
+			productReference = 6003F58A195388D20070C39A /* GKFadeNavigationController_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* GKFadeNavigationController_Tests */ = {
@@ -234,7 +237,7 @@
 			);
 			name = GKFadeNavigationController_Tests;
 			productName = GKFadeNavigationControllerTests;
-			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* GKFadeNavigationController_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -276,9 +279,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				47C262091B41C10D008B84D8 /* Launch Screen.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				47C2620B1B41C591008B84D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* GKAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* GKViewController.m in Sources */,
+				47C262011B41AA5B008B84D8 /* GKTableViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
