@@ -8,6 +8,8 @@
 
 #import "GKFadeNavigationController.h"
 
+#define kGKDefaultVisibility YES
+
 @interface GKFadeNavigationController ()
 
 @property (nonatomic, strong) UIVisualEffectView *visualEffectView;
@@ -110,10 +112,10 @@
         } else if (topControllerPrefersVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
             [self showNavigaitonBar:NO withFadeAnimation:animated];
         } else {
-            [self showNavigaitonBar:NO withFadeAnimation:NO];
+            [self showNavigaitonBar:kGKDefaultVisibility withFadeAnimation:NO];
         }
     } else {
-        [self showNavigaitonBar:NO withFadeAnimation:NO];
+        [self showNavigaitonBar:kGKDefaultVisibility withFadeAnimation:NO];
     }
 }
 
