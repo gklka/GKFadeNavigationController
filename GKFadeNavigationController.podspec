@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "GKFadeNavigationController"
-  s.version          = "0.3"
+  s.version          = "0.3.1"
   s.summary          = "A Navigation Controller which supports animated hiding of the Navigation Bar"
   s.description      = <<-DESC
                        This is an example implementation of a `UINavigationController` with support of animated hiding and showing it's Navigation Bar.

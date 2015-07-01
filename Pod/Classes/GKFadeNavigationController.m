@@ -127,7 +127,7 @@
     
     // Revert to original values
     [self.navigationBar setBackgroundImage:[[UINavigationBar appearance] backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar setTranslucent:[[UINavigationBar appearance] isTranslucent]];
+    [self.navigationBar setTranslucent:YES];
     [self.navigationBar setShadowImage:[[UINavigationBar appearance] shadowImage]];
     [self.navigationBar setTitleTextAttributes:[[UINavigationBar appearance] titleTextAttributes]];
     [self.navigationBar setTintColor:self.originalTintColor];

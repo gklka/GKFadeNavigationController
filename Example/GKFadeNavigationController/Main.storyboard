@@ -82,20 +82,23 @@
                         <sections>
                             <tableViewSection id="kTz-h0-WoO">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="N6U-jO-Cds" style="IBUITableViewCellStyleDefault" id="Sxp-1I-LvU">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="259" id="Sxp-1I-LvU">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sxp-1I-LvU" id="xAv-tW-S30">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="This is" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N6U-jO-Cds">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second" translatesAutoresizingMaskIntoConstraints="NO" id="roI-c6-GPj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="roI-c6-GPj" secondAttribute="trailing" id="BLV-5S-lgT"/>
+                                                <constraint firstItem="roI-c6-GPj" firstAttribute="leading" secondItem="xAv-tW-S30" secondAttribute="leading" id="aAH-pz-M44"/>
+                                                <constraint firstItem="roI-c6-GPj" firstAttribute="top" secondItem="xAv-tW-S30" secondAttribute="top" id="gkM-NL-crd"/>
+                                                <constraint firstAttribute="bottom" secondItem="roI-c6-GPj" secondAttribute="bottom" id="zP1-2q-l5t"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
