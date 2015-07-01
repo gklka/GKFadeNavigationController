@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, GKFadeNavigationControllerNavigationBarVisibility) {
-    GKFadeNavigationControllerNavigationBarVisibilityUndefined,
-    GKFadeNavigationControllerNavigationBarVisibilityHidden,
-    GKFadeNavigationControllerNavigationBarVisibilityVisible
+    GKFadeNavigationControllerNavigationBarVisibilityUndefined = 0,
+    GKFadeNavigationControllerNavigationBarVisibilitySystem = 1,
+    GKFadeNavigationControllerNavigationBarVisibilityHidden = 2,
+    GKFadeNavigationControllerNavigationBarVisibilityVisible = 3
 };
 
 

@@ -20,12 +20,21 @@
 
 @implementation GKTableViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        self.navigaionBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityHidden;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.view sendSubviewToBack:self.headerView];
-    
-    self.navigaionBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityHidden;
     
     GKFadeNavigationController *navigationController = (GKFadeNavigationController *)self.navigationController;
     [navigationController setNeedsNavigationBarVisibilityUpdateAnimated:NO];
