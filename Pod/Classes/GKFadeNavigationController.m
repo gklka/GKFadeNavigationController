@@ -9,10 +9,13 @@
 #import "GKFadeNavigationController.h"
 
 #define kGKDefaultVisibility YES
+#define IS_OS_OLDER_THAN_IOS_8 [[[UIDevice currentDevice] systemVersion] floatValue] <= 8.f
 
 @interface GKFadeNavigationController ()
 
 @property (nonatomic, strong) UIVisualEffectView *visualEffectView;
+@property (nonatomic, strong) UIView *fakeNavigationBarBackground;
+
 @property (nonatomic) GKFadeNavigationControllerNavigationBarVisibility navigationBarVisibility;
 @property (nonatomic, strong) UIColor *originalTintColor;
 
@@ -21,7 +24,7 @@
 
 @implementation GKFadeNavigationController
 
-#pragma mark Lifecycle
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +36,7 @@
     [self setNavigationBarVisibilityForController:self.topViewController animated:NO];
 }
 
-#pragma mark Accessors
+#pragma mark - Accessors
 
 - (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility
 {
@@ -59,7 +62,52 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
-#pragma mark UI support
+// For iOS 8+
+- (UIView *)fakeNavigationBarBackground
+{
+    if (!_fakeNavigationBarBackground) {
+        _fakeNavigationBarBackground = [[UIView alloc] initWithFrame:self.navigationBar.frame];
+        _fakeNavigationBarBackground.frame = CGRectMake(0, -20.f, self.view.frame.size.width, 64.f);
+        _fakeNavigationBarBackground.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        _fakeNavigationBarBackground.userInteractionEnabled = NO;
+        _fakeNavigationBarBackground.backgroundColor = [UIColor colorWithWhite:1.f alpha:0.9f];
+
+        // Shadow line
+        UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 63.5f, self.view.frame.size.width, 0.5f)];
+        shadowView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2f];
+        shadowView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+
+        [_fakeNavigationBarBackground addSubview:shadowView];
+    }
+    
+    return _fakeNavigationBarBackground;
+}
+
+// For iOS 7
+- (UIVisualEffectView *)visualEffectView
+{
+    if (!_visualEffectView) {
+        // Create a the fake navigation bar background
+        UIVisualEffect *blurEffect;
+        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        
+        _visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        _visualEffectView.frame = CGRectMake(0, -20.f, self.view.frame.size.width, 64.f);
+        _visualEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        _visualEffectView.userInteractionEnabled = NO;
+        
+        // Shadow line
+        UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 63.5f, self.view.frame.size.width, 0.5f)];
+        shadowView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2f];
+        shadowView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+
+        [self.visualEffectView addSubview:shadowView];
+    }
+    
+    return _visualEffectView;
+}
+
+#pragma mark - UI support
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -70,7 +118,7 @@
     }
 }
 
-#pragma mark Navigation Controller overrides
+#pragma mark - Navigation Controller overrides
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
@@ -85,7 +133,7 @@
     return viewController;
 }
 
-#pragma mark Core functions
+#pragma mark - Core functions
 
 /**
  Add custom navigation bar background, and set the colors for a hideable navigation bar
@@ -96,25 +144,17 @@
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.translucent = YES;
     self.navigationBar.shadowImage = [UIImage new];
-    
-    // Create a the fake navigation bar background
-    UIVisualEffect *blurEffect;
-    blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-    
-    self.visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-    self.visualEffectView.frame = CGRectMake(0, -20.f, self.view.frame.size.width, 64.f);
-    self.visualEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    self.visualEffectView.userInteractionEnabled = NO;
-    
-    // Shadow line
-    UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 63.5f, self.view.frame.size.width, 0.5f)];
-    shadowView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2f];
-    shadowView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [self.visualEffectView addSubview:shadowView];
-    
-    // Add as subviews
-    [self.navigationBar addSubview:self.visualEffectView];
-    [self.navigationBar sendSubviewToBack:self.visualEffectView];
+
+    if (IS_OS_OLDER_THAN_IOS_8) {
+        // iOS 7
+        [self.navigationBar addSubview:self.fakeNavigationBarBackground];
+        [self.navigationBar sendSubviewToBack:self.fakeNavigationBarBackground];
+        
+    } else {
+        // iOS 8+
+        [self.navigationBar addSubview:self.visualEffectView];
+        [self.navigationBar sendSubviewToBack:self.visualEffectView];
+    }
 }
 
 /**
@@ -122,8 +162,13 @@
  */
 - (void)transitionFromCustomNavigationBarToSystem
 {
-    [self.visualEffectView removeFromSuperview];
-    self.visualEffectView = nil;
+    if (IS_OS_OLDER_THAN_IOS_8) {
+        // iOS 7
+        [self.fakeNavigationBarBackground removeFromSuperview];
+    } else {
+        // iOS 8+
+        [self.visualEffectView removeFromSuperview];
+    }
     
     // Revert to original values
     [self.navigationBar setBackgroundImage:[[UINavigationBar appearance] backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
@@ -134,9 +179,7 @@
 }
 
 /**
- Determines if the given view controller conforms to GKFadeNavigationControllerDelegate or not. If conforms,
- asks it about the desired navigation bar visibility (visible or hidden). If it does not conform, then
- falls back to system navigation controller.
+ Determines if the given view controller conforms to GKFadeNavigationControllerDelegate or not. If conforms, asks it about the desired navigation bar visibility (visible or hidden). If it does not conform, then falls back to system navigation controller.
  
  @param viewController The view controller which will be presented
  @param animated Present using animation or instantly
@@ -165,11 +208,23 @@
 {
     [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
         if (show) {
-            self.visualEffectView.alpha = 1;
+            if (IS_OS_OLDER_THAN_IOS_8) {
+                // iOS 7
+                self.fakeNavigationBarBackground.alpha = 1;
+            } else {
+                // iOS 8+
+                self.visualEffectView.alpha = 1;
+            }
             self.navigationBar.tintColor = [self originalTintColor];
             self.navigationBar.titleTextAttributes = [[UINavigationBar appearance] titleTextAttributes];
         } else {
-            self.visualEffectView.alpha = 0;
+            if (IS_OS_OLDER_THAN_IOS_8) {
+                // iOS 7
+                self.fakeNavigationBarBackground.alpha = 0;
+            } else {
+                // iOS 8+
+                self.visualEffectView.alpha = 0;
+            }
             self.navigationBar.tintColor = [UIColor whiteColor];
             self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor clearColor]};
         }
