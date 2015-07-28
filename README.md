@@ -40,6 +40,7 @@ You can see the attached demo project for easier reference.
 ## Requirements
 
 - iOS 7
+- iOS 8 SDK
 
 ## Known limitations
 
