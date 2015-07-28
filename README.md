@@ -18,18 +18,6 @@ This is an example implementation of a `UINavigationController` with support of 
 - Native looking translucent header
 - Demo project with elastic header image
 
-## Usage
-
-1. To run the example project, clone the repo, and run `pod install` from the Example directory first.
-1. Set your Navigation Controller class to `GKFadeNavigationController` in Storyboard
-1. Make your view controllers to conform `GKFadeNavigationControllerDelegate` protocol
-1. Implement `-preferredNavigationBarVisibility` (return `GKFadeNavigationControllerNavigationBarVisibilityHidden` or `GKFadeNavigationControllerNavigationBarVisibilityVisible`)
-1. Send a `-setNeedsNavigationBarVisibilityUpdateAnimated:animated` message to the navigation controller when you want to hide or show the navigation bar
-
-## Requirements
-
-- iOS 8+
-
 ## Installation
 
 GKFadeNavigationController is available through [CocoaPods](http://cocoapods.org). To install
@@ -39,12 +27,30 @@ it, simply add the following line to your Podfile:
 pod "GKFadeNavigationController"
 ```
 
+## Usage
+
+1. To run the example project, clone the repo, and run `pod install` from the Example directory first.
+1. Set your Navigation Controller class to `GKFadeNavigationController` in Storyboard
+1. Make your view controllers to conform `GKFadeNavigationControllerDelegate` protocol
+1. Implement `-preferredNavigationBarVisibility` (return `GKFadeNavigationControllerNavigationBarVisibilityHidden` or `GKFadeNavigationControllerNavigationBarVisibilityVisible`)
+1. Send a `-setNeedsNavigationBarVisibilityUpdateAnimated:animated` message to the navigation controller when you want to hide or show the navigation bar
+
+You can see the attached demo project for easier reference.
+
+## Requirements
+
+- iOS 7
+- iOS 8 SDK
+
 ## Known limitations
 
 - Does not handle screen rotation fully
 - Supports only light navigation bar style out of the box
 - Items under the header are not clickable
 - Changing the status bar color happens in `-viewDidAppear` currently
+- On iOS 7 it uses semi-transparent view instead of blurred
+
+Feel free to contribute or send me pull requests.
 
 ## Author
 
