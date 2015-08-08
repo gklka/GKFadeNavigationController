@@ -58,4 +58,4 @@ Gruber Kristóf, gk@lka.hu, @gklka
 
 ## License
 
-GKFadeNavigationController is available under the GNU LGPL license. See the LICENSE file for more info.
+GKFadeNavigationController is available under the MIT license. See the LICENSE file for more info.
