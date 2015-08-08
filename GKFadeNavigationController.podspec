@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GKFadeNavigationController"
-  s.version          = "0.4.3"
+  s.version          = "0.4.4"
   s.summary          = "A Navigation Controller which supports animated hiding of the Navigation Bar"
   s.description      = <<-DESC
                        This is an example implementation of a `UINavigationController` with support of animated hiding and showing it's Navigation Bar.
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = "https://github.com/gklka/GKFadeNavigationController"
   s.screenshots      = "https://github.com/gklka/GKFadeNavigationController/blob/master/example.gif?raw=true"
-  s.license          = { :type => "MIT", :file => "LICENSE.md" }
+  s.license          = { :type => "MIT", :file => "LICENSE" }
   s.author           = { "Gruber Kristóf" => "gk@lka.hu" }
   s.source           = { :git => "https://github.com/gklka/GKFadeNavigationController.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/gklka'
