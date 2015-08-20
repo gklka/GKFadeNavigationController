@@ -11,7 +11,7 @@ This is an example implementation of a `UINavigationController` with support of 
 
 ## Try it yourself
 
-<iframe src="https://appetize.io/embed/a87tdk5m1quj4wmqec3h0dh3er?device=iphone5s&scale=100&autoplay=false&orientation=portrait&deviceColor=white&screenOnly=true" width="320px" height="568px" frameborder="0" scrolling="no"></iframe>
+[Online simulator on appetize.io](https://appetize.io/embed/a87tdk5m1quj4wmqec3h0dh3er?device=iphone5s&scale=100&autoplay=true&orientation=portrait&deviceColor=white&screenOnly=true)
 
 ## Features
 
