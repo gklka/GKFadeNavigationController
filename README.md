@@ -31,6 +31,8 @@ it, simply add the following line to your Podfile:
 pod "GKFadeNavigationController"
 ```
 
+Then update your pods with `pod update`.
+
 ## Usage
 
 1. To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -46,6 +48,8 @@ You can see the attached demo project for easier reference.
 - iOS 7
 - iOS 8 SDK
 
+Works fine with iOS 9.
+
 ## Known limitations
 
 - Does not handle screen rotation fully
@@ -58,7 +62,7 @@ Feel free to contribute or send me pull requests.
 
 ## Author
 
-Gruber Kristóf, gk@lka.hu, @gklka
+Gruber Kristóf, gk@lka.hu, [@gklka](https://twitter.com/gklka)
 
 ## License
 
