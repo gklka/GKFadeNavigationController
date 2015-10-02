@@ -11,7 +11,7 @@
 #define kGKDefaultVisibility YES
 #define IS_OS_OLDER_THAN_IOS_8 [[[UIDevice currentDevice] systemVersion] floatValue] <= 8.f
 
-@interface GKFadeNavigationController ()
+@interface GKFadeNavigationController () <UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIVisualEffectView *visualEffectView;
 @property (nonatomic, strong) UIView *fakeNavigationBarBackground;
@@ -29,9 +29,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.window.backgroundColor = [UIColor redColor];
+    
     // Base values
     self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
     self.originalTintColor = [self.navigationBar tintColor];
+    self.delegate = self;
     
     [self setNavigationBarVisibilityForController:self.topViewController animated:NO];
 }
@@ -133,6 +136,13 @@
     return viewController;
 }
 
+#pragma mark - <UINavigationControllerDelegate>
+
+//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+//{
+//    [self setNavigationBarVisibilityForController:viewController animated:YES];
+//}
+
 #pragma mark - Core functions
 
 /**
@@ -187,7 +197,11 @@
 - (void)setNavigationBarVisibilityForController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if ([viewController conformsToProtocol:@protocol(GKFadeNavigationControllerDelegate)]) {
-        self.navigationBarVisibility = (GKFadeNavigationControllerNavigationBarVisibility)[viewController performSelector:@selector(preferredNavigationBarVisibility)];
+        if ([viewController respondsToSelector:@selector(preferredNavigationBarVisibility)]) {
+            self.navigationBarVisibility = (GKFadeNavigationControllerNavigationBarVisibility)[viewController performSelector:@selector(preferredNavigationBarVisibility)];
+        } else {
+            self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
+        }
     } else {
         self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
     }
@@ -239,12 +253,19 @@
 - (void)setNeedsNavigationBarVisibilityUpdateAnimated:(BOOL)animated
 {
     if ([self.topViewController conformsToProtocol:@protocol(GKFadeNavigationControllerDelegate)]) {
-        GKFadeNavigationControllerNavigationBarVisibility topControllerPrefersVisibility = (GKFadeNavigationControllerNavigationBarVisibility)[self.topViewController performSelector:@selector(preferredNavigationBarVisibility)];
+        if ([self.topViewController respondsToSelector:@selector(preferredNavigationBarVisibility)]) {
 
-        if (topControllerPrefersVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
-            [self showCustomNavigaitonBar:YES withFadeAnimation:animated];
-        } else if (topControllerPrefersVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
-            [self showCustomNavigaitonBar:NO withFadeAnimation:animated];
+            GKFadeNavigationControllerNavigationBarVisibility topControllerPrefersVisibility = (GKFadeNavigationControllerNavigationBarVisibility)[self.topViewController performSelector:@selector(preferredNavigationBarVisibility)];
+
+            if (topControllerPrefersVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
+                [self showCustomNavigaitonBar:YES withFadeAnimation:animated];
+            } else if (topControllerPrefersVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
+                [self showCustomNavigaitonBar:NO withFadeAnimation:animated];
+            }
+
+        } else {
+            NSLog(@"GKFadeNavigationController error: setNeedsNavigationBarVisibilityUpdateAnimated is called but the current topmost view controller does not conform to GKFadeNavigationControllerDelegate protocol!");
+            return;
         }
     } else {
         NSLog(@"GKFadeNavigationController error: setNeedsNavigationBarVisibilityUpdateAnimated is called but the current topmost view controller does not conform to GKFadeNavigationControllerDelegate protocol!");
