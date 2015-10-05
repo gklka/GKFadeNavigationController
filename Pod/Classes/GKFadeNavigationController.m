@@ -36,25 +36,61 @@
     self.originalTintColor = [self.navigationBar tintColor];
     self.delegate = self;
     
-    [self setNavigationBarVisibilityForController:self.topViewController animated:NO];
+    [self updateNavigationBarVisibilityForController:self.topViewController animated:NO];
 }
 
 #pragma mark - Accessors
 
-- (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility
+- (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility animated:(BOOL)animated
 {
-    if (_navigationBarVisibility == navigationBarVisibility) return;
+    if (_navigationBarVisibility == navigationBarVisibility) {
+        NSLog(@"Changing navigaiton bar is not required");
+        return;
+    }
     
     if (_navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilitySystem) {
-        if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden ||
-            navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
-            [self transitionFromSystemNavigationBarToCustom];
+        // We have system navigation bar
+        
+        if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
+            
+            // We have a system navigation bar and we transition to visible
+            [self setupCustomNavigationBar];
+            
+        } else if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
+            
+            // We have a system navigation bar and we transition to visible
+            [self setupCustomNavigationBar];
+            [self showCustomNavigaitonBar:NO withFadeAnimation:animated];
         }
-    } else if (_navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden ||
-               _navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
+        
+    } else if (_navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
+        // We have a custom navigation bar
+
         if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilitySystem) {
-            [self transitionFromCustomNavigationBarToSystem];
+            
+            // We have a custom, hidden navigation bar, we animate back then transition to custom
+            [self showCustomNavigaitonBar:YES withFadeAnimation:animated];
+            [self setupSystemNavigationBar];
+            
+        } else if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
+            
+            // We have a custom, hidden navigation bar, we animate it back
+            [self showCustomNavigaitonBar:YES withFadeAnimation:animated];
+            
         }
+    } else if (_navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
+        
+        if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilitySystem) {
+            
+            // We have a visible custom navigation bar, we just have to replace it
+            [self setupSystemNavigationBar];
+            
+        } else if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
+            
+            // We have a visible custom navigation bar which we need to hide
+            [self showCustomNavigaitonBar:NO withFadeAnimation:animated];
+        }
+
     }
     
     if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityUndefined) {
@@ -126,13 +162,13 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     [super pushViewController:viewController animated:animated];
-    [self setNavigationBarVisibilityForController:viewController animated:animated];
+    [self updateNavigationBarVisibilityForController:viewController animated:animated];
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
     UIViewController *viewController = [super popViewControllerAnimated:animated];
-    [self setNavigationBarVisibilityForController:self.topViewController animated:animated];
+    [self updateNavigationBarVisibilityForController:self.topViewController animated:animated];
     return viewController;
 }
 
@@ -140,7 +176,7 @@
 
 //- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 //{
-//    [self setNavigationBarVisibilityForController:viewController animated:YES];
+//    [self updateNavigationBarVisibilityForController:viewController animated:YES];
 //}
 
 #pragma mark - Core functions
@@ -148,7 +184,7 @@
 /**
  Add custom navigation bar background, and set the colors for a hideable navigation bar
  */
-- (void)transitionFromSystemNavigationBarToCustom
+- (void)setupCustomNavigationBar
 {
     // Hide the original navigation bar's background
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
@@ -170,7 +206,7 @@
 /**
  Remove custom navigation bar background, and reset to the system default
  */
-- (void)transitionFromCustomNavigationBarToSystem
+- (void)setupSystemNavigationBar
 {
     if (IS_OS_OLDER_THAN_IOS_8) {
         // iOS 7
@@ -182,7 +218,7 @@
     
     // Revert to original values
     [self.navigationBar setBackgroundImage:[[UINavigationBar appearance] backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar setTranslucent:[[UINavigationBar appearance] isTranslucent]];
+    [self.navigationBar setTranslucent:YES];
     [self.navigationBar setShadowImage:[[UINavigationBar appearance] shadowImage]];
     [self.navigationBar setTitleTextAttributes:[[UINavigationBar appearance] titleTextAttributes]];
     [self.navigationBar setTintColor:self.originalTintColor];
@@ -194,22 +230,22 @@
  @param viewController The view controller which will be presented
  @param animated Present using animation or instantly
  */
-- (void)setNavigationBarVisibilityForController:(UIViewController *)viewController animated:(BOOL)animated
+- (void)updateNavigationBarVisibilityForController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    GKFadeNavigationControllerNavigationBarVisibility visibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
+    
     if ([viewController conformsToProtocol:@protocol(GKFadeNavigationControllerDelegate)]) {
         if ([viewController respondsToSelector:@selector(preferredNavigationBarVisibility)]) {
-            self.navigationBarVisibility = (GKFadeNavigationControllerNavigationBarVisibility)[viewController performSelector:@selector(preferredNavigationBarVisibility)];
-        } else {
-            self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
+            visibility = (GKFadeNavigationControllerNavigationBarVisibility)[viewController performSelector:@selector(preferredNavigationBarVisibility)];
         }
-    } else {
-        self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
     }
 
-    if (self.navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible ||
-        self.navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
-        [self setNeedsNavigationBarVisibilityUpdateAnimated:animated];
-    }
+    [self setNavigationBarVisibility:visibility animated:animated];
+
+//    if (self.navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible ||
+//        self.navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
+//        [self setNeedsNavigationBarVisibilityUpdateAnimated:animated];
+//    }
 }
 
 /**
