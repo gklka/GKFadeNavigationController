@@ -26,16 +26,19 @@
 
 #pragma mark - Lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.view.window.backgroundColor = [UIColor redColor];
     
     // Base values
-    self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
     self.originalTintColor = [self.navigationBar tintColor];
     self.delegate = self;
-    
+
+    [self setupCustomNavigationBar];
+    self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityVisible;
+
     [self updateNavigationBarVisibilityForController:self.topViewController animated:NO];
 }
 
@@ -232,7 +235,7 @@
  */
 - (void)updateNavigationBarVisibilityForController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    GKFadeNavigationControllerNavigationBarVisibility visibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
+    GKFadeNavigationControllerNavigationBarVisibility visibility = GKFadeNavigationControllerNavigationBarVisibilityVisible;
     
     if ([viewController conformsToProtocol:@protocol(GKFadeNavigationControllerDelegate)]) {
         if ([viewController respondsToSelector:@selector(preferredNavigationBarVisibility)]) {
