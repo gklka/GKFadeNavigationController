@@ -58,7 +58,7 @@
             
         } else if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
             
-            // We have a system navigation bar and we transition to visible
+            // We have a system navigation bar and we transition to hidden
             [self setupCustomNavigationBar];
             [self showCustomNavigaitonBar:NO withFadeAnimation:animated];
         }
@@ -101,7 +101,7 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
-// For iOS 8+
+// For iOS 7
 - (UIView *)fakeNavigationBarBackground
 {
     if (!_fakeNavigationBarBackground) {
@@ -122,7 +122,7 @@
     return _fakeNavigationBarBackground;
 }
 
-// For iOS 7
+// For iOS 8+
 - (UIVisualEffectView *)visualEffectView
 {
     if (!_visualEffectView) {
