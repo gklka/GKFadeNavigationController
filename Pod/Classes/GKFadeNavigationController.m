@@ -38,7 +38,7 @@
 
     [self setupCustomNavigationBar];
     self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityVisible;
-
+    
     [self updateNavigationBarVisibilityForController:self.topViewController animated:NO];
 }
 
@@ -101,7 +101,6 @@
     }
     
     _navigationBarVisibility = navigationBarVisibility;
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 // For iOS 7
@@ -177,10 +176,19 @@
 
 #pragma mark - <UINavigationControllerDelegate>
 
-//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-//{
-//    [self updateNavigationBarVisibilityForController:viewController animated:YES];
-//}
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    // This code is responsible for adjusting the correct navigation bar style when the user starts a side swipe gesture, but does not finish it.
+    id<UIViewControllerTransitionCoordinator> transitionCoordinator = navigationController.topViewController.transitionCoordinator;
+    [transitionCoordinator notifyWhenInteractionEndsUsingBlock:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+
+        if ([context isCancelled]) {
+            UIViewController *sourceViewController = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
+            [self updateNavigationBarVisibilityForController:sourceViewController animated:NO];
+        }
+        
+    }];
+}
 
 #pragma mark - Core functions
 
@@ -244,11 +252,6 @@
     }
 
     [self setNavigationBarVisibility:visibility animated:animated];
-
-//    if (self.navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible ||
-//        self.navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
-//        [self setNeedsNavigationBarVisibilityUpdateAnimated:animated];
-//    }
 }
 
 /**
@@ -282,8 +285,8 @@
             self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor clearColor]};
         }
     } completion:^(BOOL finished) {
-        [self setNeedsStatusBarAppearanceUpdate];
         self.navigationBarVisibility = show ? GKFadeNavigationControllerNavigationBarVisibilityVisible : GKFadeNavigationControllerNavigationBarVisibilityHidden;
+        [self setNeedsStatusBarAppearanceUpdate];
     }];
 }
 

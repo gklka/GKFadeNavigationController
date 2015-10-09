@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSUInteger, GKFadeNavigationControllerNavigationBarVisibility) {
     GKFadeNavigationControllerNavigationBarVisibilityUndefined = 0, // Initial value, don't set this
-    GKFadeNavigationControllerNavigationBarVisibilitySystem = 1, // Use System navigation bar
+    GKFadeNavigationControllerNavigationBarVisibilitySystem = 1, // Use System navigation bar - Don't use this directly!
     GKFadeNavigationControllerNavigationBarVisibilityHidden = 2, // Use custom navigation bar and hide it
     GKFadeNavigationControllerNavigationBarVisibilityVisible = 3 // Use custom navigation bar and show it
 };
