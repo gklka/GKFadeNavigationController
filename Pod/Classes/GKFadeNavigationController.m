@@ -47,7 +47,7 @@
 - (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility animated:(BOOL)animated
 {
     if (_navigationBarVisibility == navigationBarVisibility) {
-        NSLog(@"Changing navigaiton bar is not required");
+        // NSLog(@"Changing navigaiton bar is not required");
         return;
     }
     
@@ -159,29 +159,16 @@
     }
 }
 
-#pragma mark - Navigation Controller overrides
-
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    [super pushViewController:viewController animated:animated];
-    [self updateNavigationBarVisibilityForController:viewController animated:animated];
-}
-
-- (UIViewController *)popViewControllerAnimated:(BOOL)animated
-{
-    UIViewController *viewController = [super popViewControllerAnimated:animated];
-    [self updateNavigationBarVisibilityForController:self.topViewController animated:animated];
-    return viewController;
-}
-
 #pragma mark - <UINavigationControllerDelegate>
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+    [self updateNavigationBarVisibilityForController:viewController animated:animated];
+
     // This code is responsible for adjusting the correct navigation bar style when the user starts a side swipe gesture, but does not finish it.
     id<UIViewControllerTransitionCoordinator> transitionCoordinator = navigationController.topViewController.transitionCoordinator;
     [transitionCoordinator notifyWhenInteractionEndsUsingBlock:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-
+        
         if ([context isCancelled]) {
             UIViewController *sourceViewController = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
             [self updateNavigationBarVisibilityForController:sourceViewController animated:NO];
