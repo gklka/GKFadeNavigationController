@@ -20,8 +20,7 @@
 
 @implementation GKTableViewController
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
@@ -46,16 +45,14 @@
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNeedsStatusBarAppearanceUpdate];
 }
 
 #pragma mark - Accessors
 
-- (void)setNavigaionBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigaionBarVisibility
-{
+- (void)setNavigaionBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigaionBarVisibility {
     BOOL changed = NO;
     if (_navigaionBarVisibility != navigaionBarVisibility) {
         changed = YES;
@@ -91,8 +88,7 @@
 
 #pragma mark <UIScrollViewDelegate>
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat scrollOffsetY = kGKHeaderHeight-scrollView.contentOffset.y;
 
     // Stretch the header view if neccessary
@@ -113,8 +109,7 @@
 
 #pragma mark <GKFadeNavigationControllerDelegate>
 
-- (GKFadeNavigationControllerNavigationBarVisibility)preferredNavigationBarVisibility
-{
+- (GKFadeNavigationControllerNavigationBarVisibility)preferredNavigationBarVisibility {
     return self.navigaionBarVisibility;
 }
 

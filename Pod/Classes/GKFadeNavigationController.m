@@ -26,8 +26,7 @@
 
 #pragma mark - Lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     // Base values
@@ -42,8 +41,7 @@
 
 #pragma mark - Accessors
 
-- (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility animated:(BOOL)animated
-{
+- (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility animated:(BOOL)animated {
     if (_navigationBarVisibility == navigationBarVisibility) {
         // NSLog(@"Changing navigaiton bar is not required");
         return;
@@ -101,8 +99,7 @@
     _navigationBarVisibility = navigationBarVisibility;
 }
 
-- (UIVisualEffectView *)visualEffectView
-{
+- (UIVisualEffectView *)visualEffectView {
     if (!_visualEffectView) {
         // Create a the fake navigation bar background
         UIVisualEffect *blurEffect;
@@ -126,8 +123,7 @@
 
 #pragma mark - UI support
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     if (self.navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
         return UIStatusBarStyleLightContent;
     } else {
@@ -137,8 +133,7 @@
 
 #pragma mark - <UINavigationControllerDelegate>
 
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     [self updateNavigationBarVisibilityForController:viewController animated:animated];
 
     // This code is responsible for adjusting the correct navigation bar style when the user starts a side swipe gesture, but does not finish it.
@@ -158,8 +153,7 @@
 /**
  Add custom navigation bar background, and set the colors for a hideable navigation bar
  */
-- (void)setupCustomNavigationBar
-{
+- (void)setupCustomNavigationBar {
     // Hide the original navigation bar's background
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.translucent = YES;
@@ -172,8 +166,7 @@
 /**
  Remove custom navigation bar background, and reset to the system default
  */
-- (void)setupSystemNavigationBar
-{
+- (void)setupSystemNavigationBar {
     [self.visualEffectView removeFromSuperview];
     
     // Revert to original values
@@ -190,8 +183,7 @@
  @param viewController The view controller which will be presented
  @param animated Present using animation or instantly
  */
-- (void)updateNavigationBarVisibilityForController:(UIViewController *)viewController animated:(BOOL)animated
-{
+- (void)updateNavigationBarVisibilityForController:(UIViewController *)viewController animated:(BOOL)animated {
     GKFadeNavigationControllerNavigationBarVisibility visibility = GKFadeNavigationControllerNavigationBarVisibilityVisible;
     
     if ([viewController conformsToProtocol:@protocol(GKFadeNavigationControllerDelegate)]) {
@@ -209,8 +201,7 @@
  @param show If YES, the navigation bar will be shown. If no, it will be hidden.
  @param animated Animate the change or not
  */
-- (void)showCustomNavigaitonBar:(BOOL)show withFadeAnimation:(BOOL)animated
-{
+- (void)showCustomNavigaitonBar:(BOOL)show withFadeAnimation:(BOOL)animated {
     [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
         if (show) {
             self.visualEffectView.alpha = 1;
@@ -229,8 +220,7 @@
 
 #pragma mark Public
 
-- (void)setNeedsNavigationBarVisibilityUpdateAnimated:(BOOL)animated
-{
+- (void)setNeedsNavigationBarVisibilityUpdateAnimated:(BOOL)animated {
     if ([self.topViewController conformsToProtocol:@protocol(GKFadeNavigationControllerDelegate)]) {
         if ([self.topViewController respondsToSelector:@selector(preferredNavigationBarVisibility)]) {
 
