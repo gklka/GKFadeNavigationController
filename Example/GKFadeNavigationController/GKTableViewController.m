@@ -12,11 +12,16 @@
 #define kGKHeaderVisibleThreshold 44.f
 #define kGKNavbarHeight 64.f
 
-@interface GKTableViewController ()
+@interface GKTableViewController () <UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageBottomConstraint;
 
 @property (nonatomic) GKFadeNavigationControllerNavigationBarVisibility navigaionBarVisibility;
 
 @end
+
 
 @implementation GKTableViewController
 
@@ -53,17 +58,16 @@
 #pragma mark - Accessors
 
 - (void)setNavigaionBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigaionBarVisibility {
-    BOOL changed = NO;
+
     if (_navigaionBarVisibility != navigaionBarVisibility) {
-        changed = YES;
-    }
-    
-    _navigaionBarVisibility = navigaionBarVisibility;
-    
-    // Play the change
-    if (changed) {
+        // Set the value
+        _navigaionBarVisibility = navigaionBarVisibility;
+
+        // Play the change
         GKFadeNavigationController *navigationController = (GKFadeNavigationController *)self.navigationController;
-        [navigationController setNeedsNavigationBarVisibilityUpdateAnimated:YES];
+        if (navigationController.topViewController) {
+            [navigationController setNeedsNavigationBarVisibilityUpdateAnimated:YES];
+        }
     }
 }
 

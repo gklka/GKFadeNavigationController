@@ -41,12 +41,32 @@
 
 #pragma mark - Accessors
 
+- (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility {
+    [self setNavigationBarVisibility:navigationBarVisibility animated:NO];
+}
+
+- (NSString *)stringForNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)visibility {
+    switch (visibility) {
+        case GKFadeNavigationControllerNavigationBarVisibilitySystem:
+            return @"system";
+        case GKFadeNavigationControllerNavigationBarVisibilityVisible:
+            return @"visible";
+        case GKFadeNavigationControllerNavigationBarVisibilityHidden:
+            return @"hidden";
+        default:
+            return @"unknown";
+    }
+}
+
 - (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility animated:(BOOL)animated {
+    
     if (_navigationBarVisibility == navigationBarVisibility) {
-        // NSLog(@"Changing navigaiton bar is not required");
+//         NSLog(@"Changing navigaiton bar is not required");
         return;
     }
     
+//    NSLog(@"setNavigationBarVisibility: from %@ to %@ animated: %@", [self stringForNavigationBarVisibility:_navigationBarVisibility], [self stringForNavigationBarVisibility:navigationBarVisibility], animated ? @"YES" : @"NO");
+
     if (_navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilitySystem) {
         // We have system navigation bar
         
@@ -154,6 +174,8 @@
  Add custom navigation bar background, and set the colors for a hideable navigation bar
  */
 - (void)setupCustomNavigationBar {
+    NSLog(@"Setup custom Navigation Bar");
+    
     // Hide the original navigation bar's background
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.translucent = YES;
@@ -167,6 +189,8 @@
  Remove custom navigation bar background, and reset to the system default
  */
 - (void)setupSystemNavigationBar {
+    NSLog(@"Setup system Navigation Bar");
+    
     [self.visualEffectView removeFromSuperview];
     
     // Revert to original values
@@ -184,7 +208,7 @@
  @param animated Present using animation or instantly
  */
 - (void)updateNavigationBarVisibilityForController:(UIViewController *)viewController animated:(BOOL)animated {
-    GKFadeNavigationControllerNavigationBarVisibility visibility = GKFadeNavigationControllerNavigationBarVisibilityVisible;
+    GKFadeNavigationControllerNavigationBarVisibility visibility = GKFadeNavigationControllerNavigationBarVisibilitySystem;
     
     if ([viewController conformsToProtocol:@protocol(GKFadeNavigationControllerDelegate)]) {
         if ([viewController respondsToSelector:@selector(preferredNavigationBarVisibility)]) {
@@ -213,31 +237,31 @@
             self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor clearColor]};
         }
     } completion:^(BOOL finished) {
-        self.navigationBarVisibility = show ? GKFadeNavigationControllerNavigationBarVisibilityVisible : GKFadeNavigationControllerNavigationBarVisibilityHidden;
         [self setNeedsStatusBarAppearanceUpdate];
     }];
 }
 
-#pragma mark Public
+#pragma mark - Public
 
 - (void)setNeedsNavigationBarVisibilityUpdateAnimated:(BOOL)animated {
+    if (!self.topViewController) {
+        NSLog(@"GKFadeNavigationController error: topViewController is not set");
+        return;
+    }
+    
     if ([self.topViewController conformsToProtocol:@protocol(GKFadeNavigationControllerDelegate)]) {
         if ([self.topViewController respondsToSelector:@selector(preferredNavigationBarVisibility)]) {
 
             GKFadeNavigationControllerNavigationBarVisibility topControllerPrefersVisibility = (GKFadeNavigationControllerNavigationBarVisibility)[self.topViewController performSelector:@selector(preferredNavigationBarVisibility)];
-
-            if (topControllerPrefersVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
-                [self showCustomNavigaitonBar:YES withFadeAnimation:animated];
-            } else if (topControllerPrefersVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
-                [self showCustomNavigaitonBar:NO withFadeAnimation:animated];
-            }
+            
+            [self setNavigationBarVisibility:topControllerPrefersVisibility animated:animated];
 
         } else {
-            NSLog(@"GKFadeNavigationController error: setNeedsNavigationBarVisibilityUpdateAnimated is called but the current topmost view controller does not conform to GKFadeNavigationControllerDelegate protocol!");
+            NSLog(@"GKFadeNavigationController error: setNeedsNavigationBarVisibilityUpdateAnimated is called but %@ does not have -preferredNavigationBarVisibility method!", self.topViewController);
             return;
         }
     } else {
-        NSLog(@"GKFadeNavigationController error: setNeedsNavigationBarVisibilityUpdateAnimated is called but the current topmost view controller does not conform to GKFadeNavigationControllerDelegate protocol!");
+        NSLog(@"GKFadeNavigationController error: setNeedsNavigationBarVisibilityUpdateAnimated is called but %@ does not conform to GKFadeNavigationControllerDelegate protocol!", self.topViewController);
     }
 }
 
