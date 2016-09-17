@@ -1,5 +1,5 @@
 PODS:
-  - GKFadeNavigationController (0.1.0)
+  - GKFadeNavigationController (0.6)
 
 DEPENDENCIES:
   - GKFadeNavigationController (from `../`)
@@ -9,6 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GKFadeNavigationController: 1ceb329d0eb148efa5f48a5a6e9a62e652748064
+  GKFadeNavigationController: 82b5b5ace069e18d88e39f192413b06291b3f539
 
-COCOAPODS: 0.37.2
+PODFILE CHECKSUM: 9b001cbac82a0b6e11c2d3093fb25a23786001ac
+
+COCOAPODS: 1.0.1

@@ -1,0 +1,6 @@
+framework module GKFadeNavigationController {
+  umbrella header "GKFadeNavigationController-umbrella.h"
+
+  export *
+  module * { export * }
+}

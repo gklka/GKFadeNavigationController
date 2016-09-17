@@ -1,12 +1,11 @@
-source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'GKFadeNavigationController_Example', :exclusive => true do
-  pod "GKFadeNavigationController", :path => "../"
-end
-
-target 'GKFadeNavigationController_Tests', :exclusive => true do
-  pod "GKFadeNavigationController", :path => "../"
-
-  
+target 'GKFadeNavigationController_Example' do
+    pod 'GKFadeNavigationController', :path => '../'
+    
+    target 'GKFadeNavigationController_Tests' do
+        inherit! :search_paths
+        
+        
+    end
 end

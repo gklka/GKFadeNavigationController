@@ -1,6 +1,0 @@
-framework module GKFadeNavigationController {
-  umbrella header "Pods-GKFadeNavigationController_Example-GKFadeNavigationController-umbrella.h"
-
-  export *
-  module * { export * }
-}

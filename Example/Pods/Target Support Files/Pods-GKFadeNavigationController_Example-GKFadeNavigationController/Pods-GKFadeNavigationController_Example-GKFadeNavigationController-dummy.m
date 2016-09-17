@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_GKFadeNavigationController_Example_GKFadeNavigationController : NSObject
-@end
-@implementation PodsDummy_Pods_GKFadeNavigationController_Example_GKFadeNavigationController
-@end
