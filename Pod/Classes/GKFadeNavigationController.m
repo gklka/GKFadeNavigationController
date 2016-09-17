@@ -29,9 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.window.backgroundColor = [UIColor redColor];
-    
+        
     // Base values
     self.originalTintColor = [self.navigationBar tintColor];
     self.delegate = self;
