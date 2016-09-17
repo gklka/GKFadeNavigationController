@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
+    
     // Base values
     self.originalTintColor = [self.navigationBar tintColor];
     self.delegate = self;
@@ -101,28 +101,6 @@
     _navigationBarVisibility = navigationBarVisibility;
 }
 
-// For iOS 7
-- (UIView *)fakeNavigationBarBackground
-{
-    if (!_fakeNavigationBarBackground) {
-        _fakeNavigationBarBackground = [[UIView alloc] initWithFrame:self.navigationBar.frame];
-        _fakeNavigationBarBackground.frame = CGRectMake(0, -20.f, self.view.frame.size.width, 64.f);
-        _fakeNavigationBarBackground.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        _fakeNavigationBarBackground.userInteractionEnabled = NO;
-        _fakeNavigationBarBackground.backgroundColor = [UIColor colorWithWhite:1.f alpha:0.9f];
-
-        // Shadow line
-        UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 63.5f, self.view.frame.size.width, 0.5f)];
-        shadowView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2f];
-        shadowView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-
-        [_fakeNavigationBarBackground addSubview:shadowView];
-    }
-    
-    return _fakeNavigationBarBackground;
-}
-
-// For iOS 8+
 - (UIVisualEffectView *)visualEffectView
 {
     if (!_visualEffectView) {
@@ -187,16 +165,8 @@
     self.navigationBar.translucent = YES;
     self.navigationBar.shadowImage = [UIImage new];
 
-    if (IS_OS_OLDER_THAN_IOS_8) {
-        // iOS 7
-        [self.navigationBar addSubview:self.fakeNavigationBarBackground];
-        [self.navigationBar sendSubviewToBack:self.fakeNavigationBarBackground];
-        
-    } else {
-        // iOS 8+
-        [self.navigationBar addSubview:self.visualEffectView];
-        [self.navigationBar sendSubviewToBack:self.visualEffectView];
-    }
+    [self.navigationBar addSubview:self.visualEffectView];
+    [self.navigationBar sendSubviewToBack:self.visualEffectView];
 }
 
 /**
@@ -204,13 +174,7 @@
  */
 - (void)setupSystemNavigationBar
 {
-    if (IS_OS_OLDER_THAN_IOS_8) {
-        // iOS 7
-        [self.fakeNavigationBarBackground removeFromSuperview];
-    } else {
-        // iOS 8+
-        [self.visualEffectView removeFromSuperview];
-    }
+    [self.visualEffectView removeFromSuperview];
     
     // Revert to original values
     [self.navigationBar setBackgroundImage:[[UINavigationBar appearance] backgroundImageForBarMetrics:UIBarMetricsDefault] forBarMetrics:UIBarMetricsDefault];
@@ -249,23 +213,11 @@
 {
     [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
         if (show) {
-            if (IS_OS_OLDER_THAN_IOS_8) {
-                // iOS 7
-                self.fakeNavigationBarBackground.alpha = 1;
-            } else {
-                // iOS 8+
-                self.visualEffectView.alpha = 1;
-            }
+            self.visualEffectView.alpha = 1;
             self.navigationBar.tintColor = [self originalTintColor];
             self.navigationBar.titleTextAttributes = [[UINavigationBar appearance] titleTextAttributes];
         } else {
-            if (IS_OS_OLDER_THAN_IOS_8) {
-                // iOS 7
-                self.fakeNavigationBarBackground.alpha = 0;
-            } else {
-                // iOS 8+
-                self.visualEffectView.alpha = 0;
-            }
+            self.visualEffectView.alpha = 0;
             self.navigationBar.tintColor = [UIColor whiteColor];
             self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor clearColor]};
         }
