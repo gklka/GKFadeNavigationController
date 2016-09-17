@@ -174,8 +174,6 @@
  Add custom navigation bar background, and set the colors for a hideable navigation bar
  */
 - (void)setupCustomNavigationBar {
-    NSLog(@"Setup custom Navigation Bar");
-    
     // Hide the original navigation bar's background
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.translucent = YES;
@@ -189,8 +187,6 @@
  Remove custom navigation bar background, and reset to the system default
  */
 - (void)setupSystemNavigationBar {
-    NSLog(@"Setup system Navigation Bar");
-    
     [self.visualEffectView removeFromSuperview];
     
     // Revert to original values
