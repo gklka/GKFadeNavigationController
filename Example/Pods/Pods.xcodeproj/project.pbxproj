@@ -7,56 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B1B101DAC9A3896A44E19DB /* GKFadeNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EAED70BA9A4EE16E0910FF /* GKFadeNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1915F554EFACDE527882009C /* Pods-GKFadeNavigationController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CE41A116698A953ECCB74E /* Pods-GKFadeNavigationController_Example-dummy.m */; };
-		2713C1371A012F20039FCF52 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5243D72E0DE10E9B81E812AC /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3498B5C98182F5925749A795 /* Pods-GKFadeNavigationController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD50B7CA74FA749C8497D8A /* Pods-GKFadeNavigationController_Tests-dummy.m */; };
-		3EE1B50949142F4B58C1AED2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461056CCB4C7088C2E6B123F /* Foundation.framework */; };
-		3FAE1931F4954C4B5A011C20 /* GKFadeNavigationController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 55F5688856CEB7123B86B04C /* GKFadeNavigationController.bundle */; };
-		6A3303972D84359583DEF6B2 /* GKFadeNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EAED70BA9A4EE16E0910FF /* GKFadeNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A36353934F6E439FA6BC388 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0EA8540D1C43FD3082F763 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-dummy.m */; };
 		7F34B2834B03A0ABA0BE2886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461056CCB4C7088C2E6B123F /* Foundation.framework */; };
 		82DFF94664BED988740F2136 /* Pods-GKFadeNavigationController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9A956C01E0D469ACD76228 /* Pods-GKFadeNavigationController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		85C3201C9D6A91281104F021 /* GKFadeNavigationController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFE0D7AA530DA98E40BBE8 /* GKFadeNavigationController.bundle */; };
 		9AB7B9ABE2121B20AE0A3547 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461056CCB4C7088C2E6B123F /* Foundation.framework */; };
 		B00B98687FFE75695E179C2A /* Pods-GKFadeNavigationController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1395F40B6746B167DCD0A6BC /* Pods-GKFadeNavigationController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D237B4F8C45526396F1456E9 /* GKFadeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D54D03A7607D8CF99261C3E /* GKFadeNavigationController.m */; };
-		D2BD18B54E1A290153EE5198 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B70B4EE145D5B3B337CE20 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-dummy.m */; };
-		E66607BBDB2B2F91332A2E31 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C3F0964A98BF9C4F6859DE2 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1C0B78C7376567CF48820CD /* GKFadeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D54D03A7607D8CF99261C3E /* GKFadeNavigationController.m */; };
-		F23E65D70AE9F87FDDC0E152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461056CCB4C7088C2E6B123F /* Foundation.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		04EF97A6E5493271C87AE2BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B23A7BC026F9EA268B591DC2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B4A573723EE78B08250D762;
-			remoteInfo = "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-GKFadeNavigationController";
-		};
-		21D09F18E092954ACEE6687E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B23A7BC026F9EA268B591DC2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4BCBBE6F090D6109B652F083;
-			remoteInfo = "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController";
-		};
-		53055E4FD943282D6C73C066 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B23A7BC026F9EA268B591DC2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 688270D60509AE48E7548D50;
-			remoteInfo = "Pods-GKFadeNavigationController_Example-GKFadeNavigationController-GKFadeNavigationController";
-		};
-		5422B0798DB57CBF93099C0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B23A7BC026F9EA268B591DC2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4DD0357646C6FF4AD32AE228;
-			remoteInfo = "Pods-GKFadeNavigationController_Example-GKFadeNavigationController";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0F0EA8540D1C43FD3082F763 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GKFadeNavigationController_Example-GKFadeNavigationController-dummy.m"; sourceTree = "<group>"; };
@@ -82,7 +39,6 @@
 		55F5688856CEB7123B86B04C /* GKFadeNavigationController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKFadeNavigationController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5965A8AAEA56FBAD5C2B0F8C /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GKFadeNavigationController_Example-GKFadeNavigationController.xcconfig"; sourceTree = "<group>"; };
 		5B9B678CEE29032265360F6D /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-Private.xcconfig"; path = "../Pods-GKFadeNavigationController_Tests-GKFadeNavigationController/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-Private.xcconfig"; sourceTree = "<group>"; };
-		5DB6EB5D7A505A9C6131E4B2 /* GKFadeNavigationController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GKFadeNavigationController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6DFF7D4B8014E7E1555373 /* Pods_GKFadeNavigationController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKFadeNavigationController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FCFB8F91EF27F2C792C331 /* Pods_GKFadeNavigationController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKFadeNavigationController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76EAED70BA9A4EE16E0910FF /* GKFadeNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GKFadeNavigationController.h; sourceTree = "<group>"; };
@@ -98,7 +54,6 @@
 		D17257B0E65D30F9755C4F5A /* Pods-GKFadeNavigationController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GKFadeNavigationController_Tests.modulemap"; sourceTree = "<group>"; };
 		D520257E5FBC01B012C988FE /* Pods-GKFadeNavigationController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GKFadeNavigationController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D821AC21F042BEBFE82DF814 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E18CCEA6F99B06EC6D8D4EA6 /* GKFadeNavigationController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GKFadeNavigationController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BC8C73A7D9AC808B4E4BC4 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController.xcconfig"; path = "../Pods-GKFadeNavigationController_Tests-GKFadeNavigationController/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController.xcconfig"; sourceTree = "<group>"; };
 		EBD2EAB22BC25388F1086525 /* Pods-GKFadeNavigationController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GKFadeNavigationController_Example-resources.sh"; sourceTree = "<group>"; };
 		F770E20DE66E76AA31B8B007 /* Pods-GKFadeNavigationController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GKFadeNavigationController_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -108,26 +63,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4FEF617DB1BE183A090FB58F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F23E65D70AE9F87FDDC0E152 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		62661D4A452B0DC73A1D7C23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D1F1D28638968FE1BD4B0D0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3EE1B50949142F4B58C1AED2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,8 +184,6 @@
 			children = (
 				55F5688856CEB7123B86B04C /* GKFadeNavigationController.bundle */,
 				3AEFE0D7AA530DA98E40BBE8 /* GKFadeNavigationController.bundle */,
-				E18CCEA6F99B06EC6D8D4EA6 /* GKFadeNavigationController.framework */,
-				5DB6EB5D7A505A9C6131E4B2 /* GKFadeNavigationController.framework */,
 				6B6DFF7D4B8014E7E1555373 /* Pods_GKFadeNavigationController_Example.framework */,
 				74FCFB8F91EF27F2C792C331 /* Pods_GKFadeNavigationController_Tests.framework */,
 			);
@@ -320,24 +257,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC95ED2463468661673FBAB6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B1B101DAC9A3896A44E19DB /* GKFadeNavigationController.h in Headers */,
-				2713C1371A012F20039FCF52 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBF272625B82C608E5066639 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A3303972D84359583DEF6B2 /* GKFadeNavigationController.h in Headers */,
-				E66607BBDB2B2F91332A2E31 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -352,49 +271,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				C8037B081A627E5AC10E08AA /* PBXTargetDependency */,
 			);
 			name = "Pods-GKFadeNavigationController_Tests";
 			productName = "Pods-GKFadeNavigationController_Tests";
 			productReference = 74FCFB8F91EF27F2C792C331 /* Pods_GKFadeNavigationController_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4BCBBE6F090D6109B652F083 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A2BAF75DC90BF52E806FE90F /* Build configuration list for PBXNativeTarget "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController" */;
-			buildPhases = (
-				3E1D80B26B6DBA109E52A958 /* Sources */,
-				4FEF617DB1BE183A090FB58F /* Frameworks */,
-				CA42FB32EC5BA4ECC49949F0 /* Resources */,
-				AC95ED2463468661673FBAB6 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9FA47EED67EA2946536A67F2 /* PBXTargetDependency */,
-			);
-			name = "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController";
-			productName = "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController";
-			productReference = 5DB6EB5D7A505A9C6131E4B2 /* GKFadeNavigationController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4DD0357646C6FF4AD32AE228 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7507EF01608EB4BE6C6230B1 /* Build configuration list for PBXNativeTarget "Pods-GKFadeNavigationController_Example-GKFadeNavigationController" */;
-			buildPhases = (
-				372DDC695E63BAF59E2B22D5 /* Sources */,
-				6D1F1D28638968FE1BD4B0D0 /* Frameworks */,
-				BFA61CA8B1F55F91E84360C0 /* Resources */,
-				FBF272625B82C608E5066639 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				710BF4F43816368C83ACD006 /* PBXTargetDependency */,
-			);
-			name = "Pods-GKFadeNavigationController_Example-GKFadeNavigationController";
-			productName = "Pods-GKFadeNavigationController_Example-GKFadeNavigationController";
-			productReference = E18CCEA6F99B06EC6D8D4EA6 /* GKFadeNavigationController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		688270D60509AE48E7548D50 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-GKFadeNavigationController */ = {
@@ -442,7 +322,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A6FD24CB01EA9D7DEEAF0F76 /* PBXTargetDependency */,
 			);
 			name = "Pods-GKFadeNavigationController_Example";
 			productName = "Pods-GKFadeNavigationController_Example";
@@ -470,10 +349,8 @@
 			projectRoot = "";
 			targets = (
 				FCAE3B92D6911BFC24885BBA /* Pods-GKFadeNavigationController_Example */,
-				4DD0357646C6FF4AD32AE228 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController */,
 				688270D60509AE48E7548D50 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-GKFadeNavigationController */,
 				3A47E0CA239E4F31D191498C /* Pods-GKFadeNavigationController_Tests */,
-				4BCBBE6F090D6109B652F083 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController */,
 				7B4A573723EE78B08250D762 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-GKFadeNavigationController */,
 			);
 		};
@@ -487,14 +364,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFA61CA8B1F55F91E84360C0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				85C3201C9D6A91281104F021 /* GKFadeNavigationController.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C1A80DACD7081D11A64EAD4C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,35 +371,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA42FB32EC5BA4ECC49949F0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3FAE1931F4954C4B5A011C20 /* GKFadeNavigationController.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		372DDC695E63BAF59E2B22D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F1C0B78C7376567CF48820CD /* GKFadeNavigationController.m in Sources */,
-				6A36353934F6E439FA6BC388 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E1D80B26B6DBA109E52A958 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D237B4F8C45526396F1456E9 /* GKFadeNavigationController.m in Sources */,
-				D2BD18B54E1A290153EE5198 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4A07D6B4E638C6C37F86C002 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -563,33 +406,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		710BF4F43816368C83ACD006 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GKFadeNavigationController_Example-GKFadeNavigationController-GKFadeNavigationController";
-			target = 688270D60509AE48E7548D50 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-GKFadeNavigationController */;
-			targetProxy = 53055E4FD943282D6C73C066 /* PBXContainerItemProxy */;
-		};
-		9FA47EED67EA2946536A67F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-GKFadeNavigationController";
-			target = 7B4A573723EE78B08250D762 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-GKFadeNavigationController */;
-			targetProxy = 04EF97A6E5493271C87AE2BF /* PBXContainerItemProxy */;
-		};
-		A6FD24CB01EA9D7DEEAF0F76 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GKFadeNavigationController_Example-GKFadeNavigationController";
-			target = 4DD0357646C6FF4AD32AE228 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController */;
-			targetProxy = 5422B0798DB57CBF93099C0D /* PBXContainerItemProxy */;
-		};
-		C8037B081A627E5AC10E08AA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController";
-			target = 4BCBBE6F090D6109B652F083 /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController */;
-			targetProxy = 21D09F18E092954ACEE6687E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		0D30942A8F092DE6303DFA6E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -604,7 +420,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-GKFadeNavigationController_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-GKFadeNavigationController_Example/Pods-GKFadeNavigationController_Example.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -654,33 +470,6 @@
 			};
 			name = Release;
 		};
-		1E5A0FA9E48D96D88C93A71A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B9B678CEE29032265360F6D /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GKFadeNavigationController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		2F9CC402D00C41A39C2865DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3DFAD3208D03CE76761EF4C4 /* Pods-GKFadeNavigationController_Tests.debug.xcconfig */;
@@ -722,33 +511,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
-		};
-		7E06DC53E9A2CD86585089DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B9B678CEE29032265360F6D /* Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController/Pods-GKFadeNavigationController_Tests-GKFadeNavigationController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GKFadeNavigationController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		8F8F5B085B1081211F46907D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -841,7 +603,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-GKFadeNavigationController_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-GKFadeNavigationController_Example/Pods-GKFadeNavigationController_Example.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -886,60 +648,6 @@
 			};
 			name = Release;
 		};
-		F4CA0DE53232893838913AC2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D9428396E453EDA71229993 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GKFadeNavigationController_Example-GKFadeNavigationController/Pods-GKFadeNavigationController_Example-GKFadeNavigationController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GKFadeNavigationController_Example-GKFadeNavigationController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GKFadeNavigationController_Example-GKFadeNavigationController/Pods-GKFadeNavigationController_Example-GKFadeNavigationController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GKFadeNavigationController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FE8EFBAD14C4635481DA04FE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D9428396E453EDA71229993 /* Pods-GKFadeNavigationController_Example-GKFadeNavigationController-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-GKFadeNavigationController_Example-GKFadeNavigationController/Pods-GKFadeNavigationController_Example-GKFadeNavigationController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-GKFadeNavigationController_Example-GKFadeNavigationController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-GKFadeNavigationController_Example-GKFadeNavigationController/Pods-GKFadeNavigationController_Example-GKFadeNavigationController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GKFadeNavigationController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -952,29 +660,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7507EF01608EB4BE6C6230B1 /* Build configuration list for PBXNativeTarget "Pods-GKFadeNavigationController_Example-GKFadeNavigationController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F4CA0DE53232893838913AC2 /* Debug */,
-				FE8EFBAD14C4635481DA04FE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8E772A04E46B0B92D84842A5 /* Build configuration list for PBXNativeTarget "Pods-GKFadeNavigationController_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D23E683DBE5528B17AE09366 /* Debug */,
 				0D30942A8F092DE6303DFA6E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A2BAF75DC90BF52E806FE90F /* Build configuration list for PBXNativeTarget "Pods-GKFadeNavigationController_Tests-GKFadeNavigationController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1E5A0FA9E48D96D88C93A71A /* Debug */,
-				7E06DC53E9A2CD86585089DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

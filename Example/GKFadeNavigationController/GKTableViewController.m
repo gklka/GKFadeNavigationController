@@ -51,7 +51,7 @@
 - (void)setNavigaionBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigaionBarVisibility
 {
     BOOL changed = NO;
-    if (!_navigaionBarVisibility != navigaionBarVisibility) {
+    if (_navigaionBarVisibility != navigaionBarVisibility) {
         changed = YES;
     }
     

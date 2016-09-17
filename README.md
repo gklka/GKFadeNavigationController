@@ -25,13 +25,13 @@ This is an example implementation of a `UINavigationController` with support of 
 ## Installation
 
 GKFadeNavigationController is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following line to your `Podfile`:
 
 ```ruby
 pod "GKFadeNavigationController"
 ```
 
-Then update your pods with `pod update`.
+Then update your pods with `pod install`.
 
 ## Usage
 
@@ -45,10 +45,9 @@ You can see the attached demo project for easier reference.
 
 ## Requirements
 
-- iOS 7
 - iOS 8 SDK
 
-Works fine with iOS 9.
+Works fine with iOS 10.
 
 ## Known limitations
 
@@ -56,9 +55,12 @@ Works fine with iOS 9.
 - Supports only light navigation bar style out of the box
 - Items under the header are not clickable
 - Changing the status bar color happens in `-viewDidAppear` currently
-- On iOS 7 it uses semi-transparent view instead of blurred
 
 Feel free to contribute or send me pull requests.
+
+## Changelog
+
+[GitHub Changelog and releases](https://github.com/gklka/GKFadeNavigationController/releases)
 
 ## Author
 
