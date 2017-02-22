@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageBottomConstraint;
 
-@property (nonatomic) GKFadeNavigationControllerNavigationBarVisibility navigaionBarVisibility;
+@property (nonatomic) GKFadeNavigationControllerNavigationBarVisibility navigationBarVisibility;
 
 @end
 
@@ -29,7 +29,7 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        self.navigaionBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityHidden;
+        self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityHidden;
     }
     
     return self;
@@ -57,11 +57,11 @@
 
 #pragma mark - Accessors
 
-- (void)setNavigaionBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigaionBarVisibility {
+- (void)setNavigationBarVisibility:(GKFadeNavigationControllerNavigationBarVisibility)navigationBarVisibility {
 
-    if (_navigaionBarVisibility != navigaionBarVisibility) {
+    if (_navigationBarVisibility != navigationBarVisibility) {
         // Set the value
-        _navigaionBarVisibility = navigaionBarVisibility;
+        _navigationBarVisibility = navigationBarVisibility;
 
         // Play the change
         GKFadeNavigationController *navigationController = (GKFadeNavigationController *)self.navigationController;
@@ -105,16 +105,16 @@
 
     // Show or hide the navigaiton bar
     if (scrollOffsetY-kGKNavbarHeight < kGKHeaderVisibleThreshold) {
-        self.navigaionBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityVisible;
+        self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityVisible;
     } else {
-        self.navigaionBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityHidden;
+        self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityHidden;
     }
 }
 
 #pragma mark <GKFadeNavigationControllerDelegate>
 
 - (GKFadeNavigationControllerNavigationBarVisibility)preferredNavigationBarVisibility {
-    return self.navigaionBarVisibility;
+    return self.navigationBarVisibility;
 }
 
 @end

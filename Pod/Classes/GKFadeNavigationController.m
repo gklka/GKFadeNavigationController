@@ -79,7 +79,7 @@
             
             // We have a system navigation bar and we transition to hidden
             [self setupCustomNavigationBar];
-            [self showCustomNavigaitonBar:NO withFadeAnimation:animated];
+            [self showCustomNavigationBar:NO withFadeAnimation:animated];
         }
         
     } else if (_navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
@@ -88,13 +88,13 @@
         if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilitySystem) {
             
             // We have a custom, hidden navigation bar, we animate back then transition to custom
-            [self showCustomNavigaitonBar:YES withFadeAnimation:animated];
+            [self showCustomNavigationBar:YES withFadeAnimation:animated];
             [self setupSystemNavigationBar];
             
         } else if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
             
             // We have a custom, hidden navigation bar, we animate it back
-            [self showCustomNavigaitonBar:YES withFadeAnimation:animated];
+            [self showCustomNavigationBar:YES withFadeAnimation:animated];
             
         }
     } else if (_navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityVisible) {
@@ -107,7 +107,7 @@
         } else if (navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
             
             // We have a visible custom navigation bar which we need to hide
-            [self showCustomNavigaitonBar:NO withFadeAnimation:animated];
+            [self showCustomNavigationBar:NO withFadeAnimation:animated];
         }
 
     }
@@ -221,7 +221,7 @@
  @param show If YES, the navigation bar will be shown. If no, it will be hidden.
  @param animated Animate the change or not
  */
-- (void)showCustomNavigaitonBar:(BOOL)show withFadeAnimation:(BOOL)animated {
+- (void)showCustomNavigationBar:(BOOL)show withFadeAnimation:(BOOL)animated {
     [UIView animateWithDuration:(animated ? 0.2 : 0) animations:^{
         if (show) {
             self.visualEffectView.alpha = 1;
