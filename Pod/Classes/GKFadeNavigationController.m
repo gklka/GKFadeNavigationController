@@ -135,7 +135,7 @@
         shadowView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2f];
         shadowView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
-        [self.visualEffectView addSubview:shadowView];
+        [_visualEffectView.contentView addSubview:shadowView];
     }
     
     return _visualEffectView;
