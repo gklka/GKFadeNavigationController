@@ -124,14 +124,17 @@
         // Create a the fake navigation bar background
         UIVisualEffect *blurEffect;
         blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-        
+
+        CGFloat navigationBarHeight = CGRectGetHeight(self.navigationBar.frame);
+        CGFloat statusBarHeight = [self statusBarHeight];
+
         _visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        _visualEffectView.frame = CGRectMake(0, -20.f, self.view.frame.size.width, 64.f);
+        _visualEffectView.frame = CGRectMake(0, -statusBarHeight, self.view.frame.size.width, navigationBarHeight+statusBarHeight);
         _visualEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _visualEffectView.userInteractionEnabled = NO;
         
         // Shadow line
-        UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, 63.5f, self.view.frame.size.width, 0.5f)];
+        UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(0, navigationBarHeight+statusBarHeight-0.5, self.view.frame.size.width, 0.5f)];
         shadowView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2f];
         shadowView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
@@ -139,6 +142,19 @@
     }
     
     return _visualEffectView;
+}
+
+
+/**
+ Returns the current status bar height, this might be different that 20pt, depending on the device model, orientation and other
+ factors like incomming call (in iPhone X Portrait the status bar height is 44pt). See http://stackoverflow.com/questions/12991935/how-to-programmatically-get-ios-status-bar-height/16598350#16598350
+
+ @return The current status bar height
+ */
+- (CGFloat)statusBarHeight {
+    CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
+    //Check for the MIN dimention is the easiest way to get the correct height for the current orientation
+    return MIN(statusBarSize.width, statusBarSize.height);
 }
 
 #pragma mark - UI support
