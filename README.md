@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
 [![License](https://img.shields.io/cocoapods/l/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
 [![Platform](https://img.shields.io/cocoapods/p/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
+[![Releases](https://coderelease.io/badge/gklka/GKFadeNavigationController)](https://coderelease.io/github/repository/gklka/GKFadeNavigationController)
 
 This is an example implementation of a `UINavigationController` with support of animated hiding and showing it's Navigation Bar.
 
