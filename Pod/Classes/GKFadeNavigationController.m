@@ -14,7 +14,6 @@
 @interface GKFadeNavigationController () <UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIVisualEffectView *visualEffectView;
-@property (nonatomic, strong) UIView *fakeNavigationBarBackground;
 
 @property (nonatomic) GKFadeNavigationControllerNavigationBarVisibility navigationBarVisibility;
 @property (nonatomic, strong) UIColor *originalTintColor;
@@ -37,6 +36,13 @@
     self.navigationBarVisibility = GKFadeNavigationControllerNavigationBarVisibilityVisible;
     
     [self updateNavigationBarVisibilityForController:self.topViewController animated:NO];
+}
+
+- (void)viewDidLayoutSubviews {
+    CGFloat navigationBarHeight = CGRectGetHeight(self.navigationBar.frame);
+    CGFloat statusBarHeight = [self statusBarHeight];
+    
+    self.visualEffectView.frame = CGRectMake(0, -statusBarHeight, self.view.frame.size.width, navigationBarHeight+statusBarHeight);
 }
 
 #pragma mark - Accessors
@@ -123,7 +129,11 @@
     if (!_visualEffectView) {
         // Create a the fake navigation bar background
         UIVisualEffect *blurEffect;
-        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        if ([self isNavigationStyleBlack]) {
+            blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        } else {
+            blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        }
 
         CGFloat navigationBarHeight = CGRectGetHeight(self.navigationBar.frame);
         CGFloat statusBarHeight = [self statusBarHeight];
@@ -163,7 +173,11 @@
     if (self.navigationBarVisibility == GKFadeNavigationControllerNavigationBarVisibilityHidden) {
         return UIStatusBarStyleLightContent;
     } else {
-        return UIStatusBarStyleDefault;
+        if ([self isNavigationStyleBlack]) {
+            return UIStatusBarStyleLightContent;
+        } else {
+            return UIStatusBarStyleDefault;
+        }
     }
 }
 
@@ -243,10 +257,16 @@
             self.visualEffectView.alpha = 1;
             self.navigationBar.tintColor = [self originalTintColor];
             [self.navigationBar setTitleVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefault];
+            [self.navigationBar setTitleVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefaultPrompt];
+            [self.navigationBar setTitleVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsCompact];
+            [self.navigationBar setTitleVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsCompactPrompt];
         } else {
             self.visualEffectView.alpha = 0;
             self.navigationBar.tintColor = [UIColor whiteColor];
             [self.navigationBar setTitleVerticalPositionAdjustment:-500 forBarMetrics:UIBarMetricsDefault];
+            [self.navigationBar setTitleVerticalPositionAdjustment:-500 forBarMetrics:UIBarMetricsDefaultPrompt];
+            [self.navigationBar setTitleVerticalPositionAdjustment:-500 forBarMetrics:UIBarMetricsCompact];
+            [self.navigationBar setTitleVerticalPositionAdjustment:-500 forBarMetrics:UIBarMetricsCompactPrompt];
         }
     } completion:^(BOOL finished) {
         [self setNeedsStatusBarAppearanceUpdate];
@@ -274,6 +294,18 @@
         }
     } else {
         NSLog(@"GKFadeNavigationController error: setNeedsNavigationBarVisibilityUpdateAnimated is called but %@ does not conform to GKFadeNavigationControllerDelegate protocol!", self.topViewController);
+    }
+}
+
+#pragma mark - Helper
+
+- (BOOL)isNavigationStyleBlack {
+    if (self.navigationBar.barStyle == UIBarStyleBlackTranslucent ||
+        self.navigationBar.barStyle == UIBarStyleBlack ||
+        self.navigationBar.barStyle == UIBarStyleBlackOpaque) {
+        return YES;
+    } else {
+        return NO;
     }
 }
 

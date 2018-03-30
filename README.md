@@ -22,6 +22,7 @@ This is an example implementation of a `UINavigationController` with support of 
 - Native looking translucent header
 - Demo project with elastic header image
 - iPhone X support
+- Black navigation bar style support
 
 ## Installation
 
@@ -52,8 +53,6 @@ Works fine with iOS 11.
 
 ## Known limitations
 
-- Does not handle screen rotation fully
-- Supports only light navigation bar style out of the box
 - Items under the header are not clickable
 - Changing the status bar color happens in `-viewDidAppear` currently
 
