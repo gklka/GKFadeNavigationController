@@ -38,7 +38,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view sendSubviewToBack:self.headerView];
+    UIBezierPath *topImageViewMaskingPath = [UIBezierPath bezierPath];
+    [topImageViewMaskingPath moveToPoint:CGPointMake(0, -1000.f)];
+    [topImageViewMaskingPath addLineToPoint:CGPointMake(1000.f, -1000.f)];
+    [topImageViewMaskingPath addLineToPoint:CGPointMake(1000.f, self.tableView.tableHeaderView.frame.size.height)];
+    [topImageViewMaskingPath addLineToPoint:CGPointMake(0, self.tableView.tableHeaderView.frame.size.height)];
+    [topImageViewMaskingPath closePath];
+    [topImageViewMaskingPath addClip];
+    
+    CAShapeLayer *mask = [CAShapeLayer layer];
+    mask.path = topImageViewMaskingPath.CGPath;
+    
+    self.tableView.tableHeaderView.layer.mask = mask;
     
     GKFadeNavigationController *navigationController = (GKFadeNavigationController *)self.navigationController;
     [navigationController setNeedsNavigationBarVisibilityUpdateAnimated:NO];

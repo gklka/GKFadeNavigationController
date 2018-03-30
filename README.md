@@ -1,6 +1,5 @@
 # GKFadeNavigationController
 
-[![CI Status](http://img.shields.io/travis/Gruber Kristóf/GKFadeNavigationController.svg?style=flat)](https://travis-ci.org/Gruber Kristóf/GKFadeNavigationController)
 [![Version](https://img.shields.io/cocoapods/v/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
 [![License](https://img.shields.io/cocoapods/l/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
 [![Platform](https://img.shields.io/cocoapods/p/GKFadeNavigationController.svg?style=flat)](http://cocoapods.org/pods/GKFadeNavigationController)
@@ -22,6 +21,7 @@ This is an example implementation of a `UINavigationController` with support of 
 - Uses native controls where possible (e.g. back button)
 - Native looking translucent header
 - Demo project with elastic header image
+- iPhone X support
 
 ## Installation
 
@@ -48,7 +48,7 @@ You can see the attached demo project for easier reference.
 
 - iOS 8 SDK
 
-Works fine with iOS 10.
+Works fine with iOS 11.
 
 ## Known limitations
 

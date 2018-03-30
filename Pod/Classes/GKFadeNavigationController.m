@@ -194,7 +194,7 @@
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.translucent = YES;
     self.navigationBar.shadowImage = [UIImage new];
-
+    
     [self.navigationBar addSubview:self.visualEffectView];
     [self.navigationBar sendSubviewToBack:self.visualEffectView];
 }
@@ -242,11 +242,11 @@
         if (show) {
             self.visualEffectView.alpha = 1;
             self.navigationBar.tintColor = [self originalTintColor];
-            self.navigationBar.titleTextAttributes = [[UINavigationBar appearance] titleTextAttributes];
+            [self.navigationBar setTitleVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefault];
         } else {
             self.visualEffectView.alpha = 0;
             self.navigationBar.tintColor = [UIColor whiteColor];
-            self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor clearColor]};
+            [self.navigationBar setTitleVerticalPositionAdjustment:-500 forBarMetrics:UIBarMetricsDefault];
         }
     } completion:^(BOOL finished) {
         [self setNeedsStatusBarAppearanceUpdate];
